@@ -4,7 +4,7 @@ export default function Card( { car } ) {
     return (
             <Link 
                 className="rounded-3xl border border-gray-100 max-w-sm overflow-hidden shadow-md hover:shadow-2xl transition-all"
-                href={"/" + car.id}
+                href={"/car/" + car.id}
             > 
                 <div className="relative">
                     <img
