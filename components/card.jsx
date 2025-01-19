@@ -30,7 +30,7 @@ export default function Card( { car } ) {
                     <span className="text-base">
                         $
                     </span>
-                    {car.price}
+                    {car.price.toLocaleString()}
                 </div>
             </Link>
     );
