@@ -153,6 +153,7 @@ export default function HomePage({ carsData }) {
                     </div>
                 </div>
             </div>
+            <div className="h-[120px]" />
             <Footer/>
         </>
     );
