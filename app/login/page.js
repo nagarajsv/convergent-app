@@ -15,17 +15,15 @@ export default function LoginPage() {
     const router = useRouter();
     const auth = getAuth(app);
 
-    console.log(auth.currentUser);
-
     useEffect(() => {
         if(auth.currentUser) {
             router.push('/account');
         }
     }, [auth])
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if(email && password) {
-            signInWithEmailAndPassword(auth, email, password).then((userCredential) => router.push("/account"));
+            signInWithEmailAndPassword(auth, email, password).then((userCredential) => {router.push("/account")}).catch(err => console.log(err));
         }
     }
     return <>
@@ -46,7 +44,7 @@ export default function LoginPage() {
                         <input 
                             type={hidden ? "password" : "text"} 
                             value={password} 
-                            onChange={e => setPassword(e.target.password)} 
+                            onChange={e => setPassword(e.target.value)} 
                             placeholder="Password"
                             className="rounded-md p-2 px-3 w-full"
                         />

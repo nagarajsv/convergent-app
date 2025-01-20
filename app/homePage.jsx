@@ -114,7 +114,6 @@ export default function HomePage({ carsData }) {
                                     $ <input 
                                         className="border border-gray-300 rounded-xl px-2 py-1"
                                         type="number"
-                                        defaultValue={0}
                                         value={minPrice}
                                         min={0}
                                         onChange={e => setMinPrice(e.target.value)}
@@ -147,7 +146,7 @@ export default function HomePage({ carsData }) {
                                     </div>
                                 </div>
                                 : 
-                                display.map(car => <Card key={car.id} car={car}/>)
+                                display.map(car => <Card key={car.id} car={car} displayLike={true}/>)
                             }
                         </div>
                     </div>
