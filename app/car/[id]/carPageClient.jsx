@@ -51,7 +51,7 @@ export default function CarPageClient({ car }) {
                             </div>
                             <div className="flex flex-col items-center">
                                 <img src="https://assets.fastly.carvana.io/merchui/svgs/vehicle-details/transmission-56px.svg"/>
-                                <p className="text-md text-gray-500">Tranmission</p>
+                                <p className="text-md text-gray-500">Transmission</p>
                                 <p className="text-lg font-medium">{car.transmission}</p>
                             </div>
                             <div className="flex flex-col items-center">
