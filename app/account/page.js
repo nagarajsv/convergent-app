@@ -9,6 +9,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "@/firebaseInit";
 import Card from "@/components/card";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/footer";
 
 export default function AccountPage() {
     const auth = getAuth(app);
@@ -58,10 +59,12 @@ export default function AccountPage() {
                 {cars.map((car) => <Card key={car.id} car={car} displayLike={false}/>)}
             </div>
             <div className="text-center">
-                <button className="p-4 bg-cyan-200 rounded-full hover:bg-cyan-300 transition-colors mt-6" onClick={handleSignOut}>
+                <button className="p-4 bg-cyan-200 rounded-full hover:bg-cyan-300 transition-colors my-6" onClick={handleSignOut}>
                     Sign Out
                 </button>
             </div>
+            <div className="h-[120px]" />
+            <Footer />
         </>
     );
 }

@@ -3,11 +3,13 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { doc, getDoc } from "firebase/firestore";
+import { useRouter } from "next/navigation";
 
 export default function Card( { car, displayLike } ) {
     const auth = getAuth(app)
     const [selected, setSelected] = useState(false);
     const [curUser, setCurUser] = useState(auth.currentUser);
+    const router = useRouter();
 
     onAuthStateChanged(auth, (user) => {
         if(user) {
@@ -42,6 +44,8 @@ export default function Card( { car, displayLike } ) {
                 })
             });
             setSelected(prev => !prev);
+        } else {
+            router.push("/login");
         }
     }
 
@@ -53,7 +57,7 @@ export default function Card( { car, displayLike } ) {
                 <div className="relative">
                     <img
                         src={car.image}
-                        className="h-64 w-96 object-cover"
+                        className="h-64 w-80 object-cover"
                     />
                     {displayLike && 
                         <button className="hover:text-red-500 hover:scale-110 transition-all absolute right-4 top-4 bg-white rounded-full p-1 flex items-center justify-center" onClick={e => handleClick(e)}>

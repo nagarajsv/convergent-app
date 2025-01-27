@@ -29,7 +29,7 @@ export default function LoginPage() {
     return <>
             <NavBar transparentBG={false}/>
             <div className="w-screen h-screen flex justify-center items-center flex-col gap-4">
-                <div className="border border-gray-300 rounded-xl p-8 shadow-md flex flex-col gap-4 w-1/5">
+                <div className="border border-gray-300 rounded-xl p-8 shadow-md flex flex-col gap-4 w-1/4">
                      <div className="text-3xl font-bold">
                         Sign In
                      </div>
